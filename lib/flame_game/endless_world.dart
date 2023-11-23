@@ -151,6 +151,8 @@ class EndlessWorld extends World with TapCallbacks, HasGameReference {
   /// if and how the player should jump.
   @override
   void onTapDown(TapDownEvent event) {
+
+
     player.jump();
   }
 
