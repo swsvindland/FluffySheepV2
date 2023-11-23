@@ -55,7 +55,7 @@ class EndlessRunner extends FlameGame<EndlessWorld> with HasCollisionDetection {
       ),
     );
 
-    final scoreText = 'Embers: 0 / ${level.winScore}';
+    final scoreText = 'Lives: ${level.winScore} / ${level.winScore}';
 
     // The component that is responsible for rendering the text that contains
     // the current score.
@@ -75,7 +75,7 @@ class EndlessRunner extends FlameGame<EndlessWorld> with HasCollisionDetection {
     // `scoreComponent`.
     world.scoreNotifier.addListener(() {
       scoreComponent.text =
-          scoreText.replaceFirst('0', '${world.scoreNotifier.value}');
+          scoreText.replaceFirst('${level.winScore}', '${level.winScore - world.scoreNotifier.value}');
     });
   }
 }
