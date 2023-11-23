@@ -31,7 +31,7 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
   double _gravityVelocity = 0;
 
   // The maximum length that the player can jump. Defined in virtual pixels.
-  final double _jumpLength = 600;
+  final double _jumpLength = 300;
 
   // Whether the player is currently in the air, this can be used to restrict
   // movement for example.
@@ -124,11 +124,14 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
 
   /// [towards] should be a normalized vector that points in the direction that
   /// the player should jump.
-  void jump(Vector2 towards) {
+  void jump() {
     current = PlayerState.jumping;
+
+    var upwards = Vector2(0, -1);
+
     // Since `towards` is normalized we need to scale (multiply) that vector by
     // the length that we want the jump to have.
-    final jumpEffect = JumpEffect(towards..scaleTo(_jumpLength));
+    final jumpEffect = JumpEffect(upwards..scaleTo(_jumpLength));
 
     // We only allow jumps when the player isn't already in the air.
     if (!inAir) {
