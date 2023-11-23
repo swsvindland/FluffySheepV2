@@ -1,11 +1,10 @@
+import 'package:flutter/material.dart';
 import '../audio/audio_controller.dart';
 import 'endless_runner.dart';
 import '../level_selection/levels.dart';
 import '../player_progress/player_progress.dart';
 import 'package:flame/game.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:nes_ui/nes_ui.dart';
 import 'package:provider/provider.dart';
 
 import 'game_win_dialog.dart';
@@ -39,10 +38,12 @@ class GameScreen extends StatelessWidget {
             return Positioned(
               top: 20,
               right: 10,
-              child: NesButton(
-                type: NesButtonType.normal,
-                onPressed: GoRouter.of(context).pop,
-                child: NesIcon(iconData: NesIcons.leftArrowIndicator),
+              child: ElevatedButton(
+                key: const Key('back button'),
+                onPressed: () {
+                  GoRouter.of(context).pop();
+                },
+                child: const Text('Back'),
               ),
             );
           },

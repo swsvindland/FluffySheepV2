@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
-import '../style/wobbly_button.dart';
 import '../style/palette.dart';
 import 'custom_name_dialog.dart';
 import 'settings.dart';
@@ -35,7 +34,6 @@ class SettingsScreen extends StatelessWidget {
                       'Settings',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontFamily: 'Press Start 2P',
                         fontSize: 30,
                         height: 1,
                       ),
@@ -78,7 +76,7 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             _gap,
-            WobblyButton(
+            ElevatedButton(
               onPressed: () {
                 GoRouter.of(context).pop();
               },
@@ -111,7 +109,6 @@ class _NameChangeLine extends StatelessWidget {
           children: [
             Text(title,
                 style: const TextStyle(
-                  fontFamily: 'Press Start 2P',
                   fontSize: 20,
                 )),
             const Spacer(),
@@ -120,7 +117,6 @@ class _NameChangeLine extends StatelessWidget {
               builder: (context, name, child) => Text(
                 '‘$name’',
                 style: const TextStyle(
-                  fontFamily: 'Press Start 2P',
                   fontSize: 20,
                 ),
               ),
@@ -157,7 +153,6 @@ class _SettingsLine extends StatelessWidget {
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
-                  fontFamily: 'Press Start 2P',
                   fontSize: 20,
                 ),
               ),
