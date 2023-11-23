@@ -8,7 +8,6 @@ import 'package:flame/experimental.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
-import 'components/point.dart';
 import 'game_screen.dart';
 import 'components/obstacle.dart';
 import 'components/player.dart';
@@ -86,19 +85,6 @@ class EndlessWorld extends World with TapCallbacks, HasGameReference {
         period: 5,
         area: Rectangle.fromPoints(
           Vector2(size.x / 2, groundLevel),
-          Vector2(size.x / 2, groundLevel),
-        ),
-        random: _random,
-      ),
-    );
-
-    add(
-      SpawnComponent.periodRange(
-        factory: (_) => Point(),
-        minPeriod: 3.0,
-        maxPeriod: 5.0 + level.number,
-        area: Rectangle.fromPoints(
-          Vector2(size.x / 2, -size.y / 2 + Point.spriteSize.y),
           Vector2(size.x / 2, groundLevel),
         ),
         random: _random,

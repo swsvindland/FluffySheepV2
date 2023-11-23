@@ -8,7 +8,6 @@ import '../endless_world.dart';
 import '../effects/hurt_effect.dart';
 import '../effects/jump_effect.dart';
 import 'obstacle.dart';
-import 'point.dart';
 
 /// The [Player] is the component that the physical player of the game is
 /// controlling.
@@ -111,14 +110,8 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
     // When the player collides with an obstacle it should lose all its points.
     if (other is Obstacle) {
       game.audioController.playSfx(SfxType.damage);
-      resetScore();
-      add(HurtEffect());
-    } else if (other is Point) {
-      // When the player collides with a point it should gain a point and remove
-      // the `Point` from the game.
-      game.audioController.playSfx(SfxType.score);
-      other.removeFromParent();
       addScore();
+      add(HurtEffect());
     }
   }
 
