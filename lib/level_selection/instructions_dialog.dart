@@ -32,7 +32,7 @@ class _InstructionsDialogState extends State<InstructionsDialog> {
               width: 30,
               child: _currentPage != 0
                   ? ElevatedButton(
-                      child: Icon(Icons.arrow_left),
+                      child: const Icon(Icons.arrow_left),
                       onPressed: () {
                         _pageController.previousPage(
                           duration: const Duration(milliseconds: 200),

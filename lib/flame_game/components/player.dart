@@ -20,7 +20,7 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
     required this.addScore,
     required this.resetScore,
     super.position,
-  }) : super(size: Vector2.all(150), anchor: Anchor.center, priority: 1);
+  }) : super(size: Vector2.all(200), anchor: Anchor.center, priority: 1);
 
   final void Function({int amount}) addScore;
   final VoidCallback resetScore;
@@ -48,21 +48,44 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
   Future<void> onLoad() async {
     // This defines the different animation states that the player can be in.
     animations = {
-      PlayerState.running: await game.loadSpriteAnimation(
-        'dash/dash_running.png',
-        SpriteAnimationData.sequenced(
-          amount: 4,
-          textureSize: Vector2.all(16),
-          stepTime: 0.15,
-        ),
+      PlayerState.running: SpriteAnimation.spriteList(
+        [
+          await game.loadSprite('sheep/running/Running_000.png'),
+          await game.loadSprite('sheep/running/Running_001.png'),
+          await game.loadSprite('sheep/running/Running_002.png'),
+          await game.loadSprite('sheep/running/Running_003.png'),
+          await game.loadSprite('sheep/running/Running_004.png'),
+          await game.loadSprite('sheep/running/Running_005.png'),
+          await game.loadSprite('sheep/running/Running_006.png'),
+          await game.loadSprite('sheep/running/Running_007.png'),
+          await game.loadSprite('sheep/running/Running_008.png'),
+          await game.loadSprite('sheep/running/Running_009.png'),
+          await game.loadSprite('sheep/running/Running_010.png'),
+          await game.loadSprite('sheep/running/Running_011.png')
+        ],
+        stepTime: 0.05,
       ),
       PlayerState.jumping: SpriteAnimation.spriteList(
-        [await game.loadSprite('dash/dash_jumping.png')],
-        stepTime: double.infinity,
+        [
+          await game.loadSprite('sheep/jumping/Jump_000.png'),
+          await game.loadSprite('sheep/jumping/Jump_001.png'),
+          await game.loadSprite('sheep/jumping/Jump_002.png'),
+          await game.loadSprite('sheep/jumping/Jump_003.png'),
+          await game.loadSprite('sheep/jumping/Jump_004.png'),
+          await game.loadSprite('sheep/jumping/Jump_005.png')
+        ],
+        stepTime: 0.05,
       ),
       PlayerState.falling: SpriteAnimation.spriteList(
-        [await game.loadSprite('dash/dash_falling.png')],
-        stepTime: double.infinity,
+        [
+          await game.loadSprite('sheep/falling/FallingDown_000.png'),
+          await game.loadSprite('sheep/falling/FallingDown_001.png'),
+          await game.loadSprite('sheep/falling/FallingDown_002.png'),
+          await game.loadSprite('sheep/falling/FallingDown_003.png'),
+          await game.loadSprite('sheep/falling/FallingDown_004.png'),
+          await game.loadSprite('sheep/falling/FallingDown_005.png')
+        ],
+        stepTime: 0.05,
       ),
     };
     // The starting state will be that the player is running.

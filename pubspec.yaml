@@ -7,7 +7,8 @@ publish_to: 'none'
 version: 0.1.0
 
 environment:
-  sdk: ^3.0.0
+  sdk: ^3.2.0
+  flutter: ^3.16.0
 
 dependencies:
   flame: ^1.10.1
@@ -37,6 +38,10 @@ flutter:
   assets:
     - assets/images/
     - assets/images/dash/
+    - assets/images/sheep/
+    - assets/images/sheep/running/
+    - assets/images/sheep/jumping/
+    - assets/images/sheep/falling/
     - assets/images/enemies/
     - assets/images/scenery/
     - assets/music/

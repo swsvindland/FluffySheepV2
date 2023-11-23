@@ -1,8 +1,6 @@
 import '../level_selection/levels.dart';
-import '../style/palette.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 
 /// This dialog is shown when a level is completed.
 ///
@@ -24,10 +22,9 @@ class GameWinDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final palette = context.read<Palette>();
     return Center(
       child: Card(
-        child: Container(
+        child: SizedBox(
           width: 420,
           height: 280,
           // backgroundColor: palette.backgroundPlaySession.color,
