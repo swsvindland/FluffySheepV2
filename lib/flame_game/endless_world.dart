@@ -56,7 +56,7 @@ class EndlessWorld extends World with TapCallbacks, HasGameReference {
 
   /// The gravity is defined in virtual pixels per second squared.
   /// These pixels are in relation to how big the [FixedResolutionViewport] is.
-  final double gravity = 30;
+  final double gravity = 25;
 
   /// Where the ground is located in the world and things should stop falling.
   late final double groundLevel = (size.y / 2) - (size.y / 5);
@@ -143,5 +143,5 @@ class EndlessWorld extends World with TapCallbacks, HasGameReference {
   }
 
   /// A helper function to define how fast a certain level should be.
-  static double _calculateSpeed(int level) => 200 + (level * 200);
+  static double _calculateSpeed(int level) => 500;
 }
