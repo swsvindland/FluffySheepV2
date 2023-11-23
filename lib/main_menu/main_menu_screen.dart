@@ -29,22 +29,6 @@ class MainMenuScreen extends StatelessWidget {
                 'assets/images/banner.png',
                 filterQuality: FilterQuality.none,
               ),
-              _gap,
-              Transform.rotate(
-                angle: -0.1,
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 500),
-                  child: const Text(
-                    'A Flutter game template.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Press Start 2P',
-                      fontSize: 32,
-                      height: 1,
-                    ),
-                  ),
-                ),
-              ),
             ],
           ),
         ),
@@ -76,8 +60,6 @@ class MainMenuScreen extends StatelessWidget {
                 },
               ),
             ),
-            _gap,
-            const Text('Built with Flame'),
           ],
         ),
       ),

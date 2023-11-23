@@ -1,7 +1,7 @@
 const gameLevels = <GameLevel>[
   (
     number: 1,
-    winScore: 3,
+    winScore: 1,
     canSpawnTall: false,
   )
 ];

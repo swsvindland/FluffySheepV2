@@ -17,8 +17,6 @@ class Background extends ParallaxComponent {
     final layers = [
       ParallaxImageData('scenery/background.png'),
       ParallaxImageData('scenery/clouds.png'),
-      ParallaxImageData('scenery/cliffs.png'),
-      ParallaxImageData('scenery/trees.png'),
       ParallaxImageData('scenery/ground.png'),
     ];
 
